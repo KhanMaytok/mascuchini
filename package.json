@@ -1,0 +1,33 @@
+{
+  "name": "mascuchini-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build client --outDir ../dist/client",
+    "build:server": "tsc -p tsconfig.server.json",
+    "dev": "npm run build && npm start",
+    "smoke": "node scripts/smoke.mjs",
+    "start": "node dist/server/server.js",
+    "test": "tsx --test src/*.test.ts"
+  },
+  "dependencies": {
+    "@colyseus/core": "0.17.49",
+    "@colyseus/schema": "4.0.30",
+    "@colyseus/ws-transport": "0.17.13",
+    "express": "5.2.1"
+  },
+  "devDependencies": {
+    "@babylonjs/core": "9.20.0",
+    "@colyseus/sdk": "0.17.43",
+    "@types/express": "5.0.6",
+    "@types/node": "24.13.3",
+    "tsx": "4.23.11",
+    "typescript": "7.0.2",
+    "vite": "8.2.1"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}
